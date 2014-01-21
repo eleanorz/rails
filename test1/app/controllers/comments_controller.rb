@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   def index
+  	@comments = Comment.all
   	session[:message] = "CodingDojo is awrsum!"
   	session[:user_id] = 5
 
@@ -9,7 +10,7 @@ class CommentsController < ApplicationController
   def new
   	puts session
 
-  	render :text => params
+  	render :text => session
   end
 
   def create
